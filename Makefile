@@ -5,3 +5,6 @@ testing: update
 
 update:
 	@git pull
+
+clean:
+	@make clean -C testing
