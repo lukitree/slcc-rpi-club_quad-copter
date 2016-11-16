@@ -1,10 +1,15 @@
+DIRS=testing
+
 all: testing
 
 testing: update
-	@make -C testing
+	@make -C $(DIRS)
 
 update:
 	@git pull
 
+run: update
+
+
 clean:
-	@make clean -C testing
+	@make clean -C $(DIRS)
