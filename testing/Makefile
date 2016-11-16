@@ -1,6 +1,7 @@
 CC=g++
 FLAGS=-Wall -std=c++11
 EXEC=testing
+DEL=rm -f
 
 all: program
 
@@ -14,5 +15,5 @@ main.o: main.cpp
 	$(CC) -c main.cpp $(FLAGS)
 
 clean:
-	rm $(EXEC)
-	rm *.o
+	$(DEL) $(EXEC)
+	$(DEL) *.o
