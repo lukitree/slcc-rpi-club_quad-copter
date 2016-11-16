@@ -1,24 +1,13 @@
-#include <iostream>
-#include <string>
-
-class Test
-{
-public:
-	Test()
-	{
-		std::cout << "Test()" << std::endl;
-	}
-
-	void meow(std::string msg)
-	{
-		std::cout << "Meow, " << msg << ", Meow!" << std::endl;
-	}
-};
+#include <stdio.h>
+#include <linux/i2c-dev.h>
 
 int main()
 {
-	Test * test = new Test();
-	test->meow("Rawr");
+	char filename[20];
+	sprintf(filename, "/dev/i2c-%d", 1);
+	FILE file;
+	file = open(filename, O_RDWR);
+
 
 	return 0;
 }
