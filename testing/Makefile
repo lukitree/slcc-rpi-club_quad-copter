@@ -8,7 +8,7 @@ run: program
 	./$(EXEC)
 
 program: main.o
-	@g++ -o $(EXEC) main.o
+	g++ -o $(EXEC) main.o
 
 main.o: main.cpp
 	$(CC) -c main.cpp $(FLAGS)
