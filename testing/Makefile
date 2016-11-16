@@ -2,14 +2,16 @@ CC=g++
 FLAGS=-Wall -std=c++11
 EXEC=testing
 DEL=rm -f
+BINDIR=../bin
 
 all: program
 
 run: program
-	./$(EXEC)
+	./$(BINDIR)/$(EXEC)
 
 program: main.o
-	g++ -o $(EXEC) main.o
+	@mkdir $(BINDIR)
+	g++ -o $(BINDIR)/$(EXEC) main.o
 
 main.o: main.cpp
 	$(CC) -c main.cpp $(FLAGS)

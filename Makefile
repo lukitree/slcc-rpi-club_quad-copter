@@ -8,8 +8,5 @@ testing: update
 update:
 	@git pull
 
-run: update
-
-
 clean:
 	@make clean -C $(DIRS)
