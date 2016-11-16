@@ -15,3 +15,4 @@ main.o: main.cpp
 
 clean:
 	rm $(EXEC)
+	rm *.o
