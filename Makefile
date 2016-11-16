@@ -1,5 +1,7 @@
 all: testing
 
-testing:
-	@git pull
+testing: update
 	@make -C testing
+
+update:
+	@git pull
