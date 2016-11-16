@@ -8,6 +8,5 @@ int main()
 	FILE file;
 	file = open(filename, O_RDWR);
 
-
 	return 0;
 }
