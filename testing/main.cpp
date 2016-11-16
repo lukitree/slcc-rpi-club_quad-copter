@@ -18,7 +18,7 @@ public:
 int main()
 {
 	Test * test = new Test();
-	test->meow("Woof");
+	test->meow("Rawr");
 
 	return 0;
 }
