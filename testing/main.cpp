@@ -13,7 +13,7 @@ public:
 	{
 		std::cout << "Meow, " << msg << ", Meow!" << std::endl;
 	}
-}
+};
 
 int main()
 {
