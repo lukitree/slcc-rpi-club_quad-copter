@@ -3,6 +3,7 @@ FLAGS=-Wall -std=c++11
 EXEC=testing
 DEL=rm -f
 BINDIR=../bin
+MKDIR=mkdir -p
 
 all: program
 
@@ -10,7 +11,7 @@ run: program
 	./$(BINDIR)/$(EXEC)
 
 program: main.o
-	@mkdir $(BINDIR)
+	@$(MKDIR) $(BINDIR)
 	g++ -o $(BINDIR)/$(EXEC) main.o
 
 main.o: main.cpp
