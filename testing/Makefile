@@ -1,7 +1,7 @@
 CC=g++
 FLAGS=-Wall -std=c++11
 EXEC=testing
-DEL=rm -f
+RM=rm -f
 BINDIR=../bin
 MKDIR=mkdir -p
 
@@ -18,5 +18,5 @@ main.o: main.cpp
 	$(CC) -c main.cpp $(FLAGS)
 
 clean:
-	$(DEL) $(BINDIR)/$(EXEC)
-	$(DEL) *.o
+	$(RM) $(BINDIR)/$(EXEC)
+	$(RM) *.o
