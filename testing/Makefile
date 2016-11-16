@@ -17,5 +17,5 @@ main.o: main.cpp
 	$(CC) -c main.cpp $(FLAGS)
 
 clean:
-	$(DEL) $(EXEC)
+	$(DEL) $(BINDIR)/$(EXEC)
 	$(DEL) *.o
