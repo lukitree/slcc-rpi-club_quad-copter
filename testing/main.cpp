@@ -17,8 +17,6 @@ public:
 
 int main()
 {
-	std::cout << "Hello world!" << std::endl;
-
 	Test * test = new Test();
 	test->meow("Woof");
 
