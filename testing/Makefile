@@ -7,7 +7,8 @@ run: testing
 	./testing
 
 testing: main.o
-	@g++ -o testing main.o
+	@mkdir ../bin
+	@g++ -o ../bin/testing main.o
 
 main.o: main.cpp
 	@echo g
