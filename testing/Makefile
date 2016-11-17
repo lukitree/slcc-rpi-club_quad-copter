@@ -7,7 +7,7 @@ CFLAGS		= -Wall -Wextra -std=c11 -Iinclude
 
 LINKER		= $(CC) -o
 # Linker flags
-LFLAGS		= 
+LFLAGS		=
 
 # Directories
 SRCDIR		= src

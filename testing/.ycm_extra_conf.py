@@ -13,6 +13,7 @@ flags = [
 '-std=c11',
 '-x',
 'c',
+'-Iinclude',
 ]
 
 
