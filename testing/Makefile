@@ -20,5 +20,5 @@ $(OBJS): $(SRCS)
 .PHONY: clean 
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) *.o
 	$(RM) $(BINDIR)/$(EXEC)
