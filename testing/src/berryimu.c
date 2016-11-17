@@ -1,5 +1,17 @@
 #include "berryimu.h"
 
+void init()
+{
+	char filename[20];
+	sprintf(filename, "/dev/i2c-%d", 1);
+	int file = open(filename, O_RDWR);
+	if(file < 0)
+	{
+		printf("Unable to open I2C bus!");
+		exit(1);
+	}
+}
+
 void selectDevice(int file, int addr)
 {
 	//char device[3];

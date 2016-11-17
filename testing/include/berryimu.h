@@ -9,7 +9,10 @@
 
 #define ACC_ADDRESS 0x1E
 
+void init();
 void selectDevice(int file, int addr);
 void enableAccelerometer();
 void enableGyro();
 void readACC(int* a);
+
+int file;
