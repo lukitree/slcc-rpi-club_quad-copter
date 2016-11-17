@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-Wall -std=c++11
+CFLAGS=-Wall -Wextra -DNDEBUG -std=c11
 SRCS=$(wildcard *.c)
 OBJS=$(SRCS:.cpp=.o)
 EXEC=testing

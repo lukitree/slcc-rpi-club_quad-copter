@@ -29,7 +29,7 @@ int main()
 
 void selectDevice(int file, int addr)
 {
-	char device[3];
+	//char device[3];
 
 	if(ioctl(file, I2C_SLAVE, addr) < 0)
 	{
