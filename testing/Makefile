@@ -1,6 +1,6 @@
-CC=g++
+CC=gcc
 CFLAGS=-Wall -std=c++11
-SRCS=$(wildcard *.cpp)
+SRCS=$(wildcard *.c)
 OBJS=$(SRCS:.cpp=.o)
 EXEC=testing
 
