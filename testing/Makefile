@@ -2,6 +2,7 @@ CC=g++
 CFLAGS=-Wall -std=c++11
 SRCS=$(wildcard *.cpp)
 OBJS=$(SRCS:.cpp=.o)
+EXEC=testing
 
 BINDIR=../bin
 MKDIR=mkdir -p
