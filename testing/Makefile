@@ -1,27 +1,36 @@
-CC=gcc
-CFLAGS=-Wall -Wextra -DNDEBUG -std=c11
-SRCS=$(wildcard *.c)
-OBJS=$(SRCS:.c=.o)
-TARGET=testing
+# Project name
+TARGET 		= testing
 
-OUTDIR=../bin
+CC			= gcc
+# Compiler flags
+CFLAGS		= -Wall -Wextra -std=c11 -Iinclude
 
-MKDIR_P=mkdir -p
-RM=rm -f
+LINKER		= $(CC) -o
+# Linker flags
+LFLAGS		= 
 
-all: $(TARGET)
+# Directories
+SRCDIR		= src
+OBJDIR		= obj
+BINDIR		= ../bin
 
-$(TARGET): $(OBJS) $(OUTDIR)
-	$(CC) -o $(OUTDIR)/$(TARGET) $(OBJS)
+SOURCES		:= $(wildcard $(SRCDIR)/*.c)
+OBJECTS		:= $(SOURCES:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
+RM			= rm -f
+MKDIR_P		= mkdir -p
 
-%.o: %.c
-	$(CC) -c $^ $(CFLAGS)
+all: $(BINDIR)/$(TARGET)
 
-$(OUTDIR):
-	@$(MKDIR_P) $@
+$(BINDIR)/$(TARGET): $(OBJECTS)
+	@$(MKDIR_P) $(BINDIR)
+	$(LINKER) $@ $(LFLAGS) $(OBJECTS)
+
+$(OBJECTS): $(OBJDIR)/%.o : $(SRCDIR)/%.c
+	@$(MKDIR_P) $(OBJDIR)
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	$(RM) *.o
-	$(RM) $(OUTDIR)/$(TARGET)
+	$(RM) $(OBJDIR)/*.o
+	$(RM) $(BINDIR)/$(TARGET)
 
 .PHONY: clean all
