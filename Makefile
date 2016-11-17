@@ -3,13 +3,13 @@ CLEAN=$(addsuffix .clean, $(PROGS))
 
 all: update $(PROGS)
 
-.PHONY: update clean $(CLEAN) $(PROGS)
+update:
+	@git pull
 
 $(PROGS): FORCE
 	@make -C $@ EXEC=$@
 
-update:
-	@git pull
+.PHONY: clean $(CLEAN) $(PROGS)
 
 clean: $(CLEAN)
 

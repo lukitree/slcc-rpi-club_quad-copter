@@ -1,3 +1,4 @@
 *.o
 testing/testing
 testing/__pycache__
+bin/
