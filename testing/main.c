@@ -7,6 +7,8 @@
 #define ACC_ADDRESS 0x1E
 
 void selectDevice(int file, int addr);
+void enableAccelerometer();
+void enableGyro();
 
 int main()
 {
@@ -33,4 +35,16 @@ void selectDevice(int file, int addr)
 	{
 		printf("Failed to select I2C device.");
 	}
+}
+
+void enableAccelerometer()
+{
+	writeAccReg(CTRL_REG1_XM, 0b01100111);
+	writeAccReg(CTRL_REG2_XM, 0b00100000);
+}
+
+void enableGyro()
+{
+	writeGyrReg(CTRL_REG1_G, 0b00001111);
+	writeGyrReg(CTRL_REG2_G, 0b00110000);
 }

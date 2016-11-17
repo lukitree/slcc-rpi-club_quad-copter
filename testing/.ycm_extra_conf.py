@@ -14,9 +14,9 @@ flags = [
 '-fexceptions',
 '-DNDEBUG',
 '-DUSE_CLANG_COMPLETER',
-'-std=c++11',
+'-std=c11',
 '-x',
-'c++',
+'c',
 ]
 
 
