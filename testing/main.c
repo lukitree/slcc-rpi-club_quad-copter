@@ -4,6 +4,8 @@
 #include <sys/stat.h>
 #include <linux/i2c-dev.h>
 
+#define ACC_ADDRESS 0x1E
+
 void selectDevice(int file, int addr);
 
 int main()
