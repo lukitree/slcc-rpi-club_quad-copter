@@ -11,7 +11,7 @@ int main()
 	int file = open(filename, O_RDWR);
 	if(file < 0)
 	{
-		print("Unable to open I2C bus!");
+		printf("Unable to open I2C bus!");
 		exit(1);
 	}
 
