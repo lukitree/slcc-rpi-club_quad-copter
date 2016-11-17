@@ -12,8 +12,7 @@ all: $(EXEC)
 
 $(EXEC): $(OBJS)
 	@$(MKDIR) $(BINDIR)
-	$(CC) -o $(EXEC) $(OBJS)
-	mv $(EXEC) ../bin/
+	$(CC) -o $(BINDIR)/$(EXEC) $(OBJS)
 
 $(OBJS): $(SRCS)
 	$(CC) -c $^ $(CFLAGS)
