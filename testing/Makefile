@@ -1,22 +1,23 @@
 CC=g++
-FLAGS=-Wall -std=c++11
-EXEC=testing
-RM=rm -f
+CFLAGS=-Wall -std=c++11
+SRCS=$(wildcard *.cpp)
+OBJS=$(SRCS:.cpp=.o)
+
 BINDIR=../bin
 MKDIR=mkdir -p
+RM=rm -f
 
-all: program
+all: $(EXEC)
 
-run: program
-	./$(BINDIR)/$(EXEC)
-
-program: main.o
+$(EXEC): $(OBJS)
 	@$(MKDIR) $(BINDIR)
-	g++ -o $(BINDIR)/$(EXEC) main.o
+	g++ -o $(BINDIR)/$(EXEC) $(OBJS)
 
-main.o: main.cpp
-	$(CC) -c main.cpp $(FLAGS)
+$(OBJS): $(SRCS)
+	$(CC) -c $^ $(CFLAGS)
+
+.PHONY: clean 
 
 clean:
+	$(RM) $(OBJS)
 	$(RM) $(BINDIR)/$(EXEC)
-	$(RM) *.o
