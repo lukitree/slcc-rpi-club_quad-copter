@@ -3,6 +3,7 @@
 #include <fcntl.h>
 #include <sys/stat.h>
 #include <linux/i2c-dev.h>
+#include <SPI.h>
 
 #define ACC_ADDRESS 0x1E
 
