@@ -4,6 +4,8 @@
 #include <sys/stat.h>
 #include <linux/i2c-dev.h>
 
+void selectDevice(int file, int addr);
+
 int main()
 {
 	char filename[20];
@@ -16,5 +18,17 @@ int main()
 	}
 	printf("Success!\n");
 
+	selectDevice(file, ACC_ADDRESS);
+
 	return 0;
+}
+
+void selectDevice(int file, int addr)
+{
+	char device[3];
+
+	if(ioctl(file, I2C_SLAVE, addr) < 0)
+	{
+		printf("Failed to select I2C device.");
+	}
 }
