@@ -12,7 +12,7 @@ all: $(EXEC)
 
 $(EXEC): $(OBJS)
 	@$(MKDIR) $(BINDIR)
-	g++ -o $(BINDIR)/$(EXEC) $(OBJS)
+	$(CC) -o $(BINDIR)/$(EXEC) $(OBJS)
 
 $(OBJS): $(SRCS)
 	$(CC) -c $^ $(CFLAGS)
