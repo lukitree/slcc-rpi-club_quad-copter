@@ -14,7 +14,7 @@ int main()
 		printf("Unable to open I2C bus!");
 		exit(1);
 	}
-	printf("Success!");
+	printf("Success!\n");
 
 	return 0;
 }
