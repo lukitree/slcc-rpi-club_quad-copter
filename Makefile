@@ -9,7 +9,7 @@ $(PROGS): FORCE
 	@make -C $@ EXEC=$@
 
 update:
-	@: git pull
+	@git pull
 
 clean: $(CLEAN)
 
