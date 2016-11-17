@@ -14,7 +14,7 @@ $(EXEC): $(OBJS)
 	@$(MKDIR) $(BINDIR)
 	$(CC) -o $(BINDIR)/$(EXEC) $(OBJS)
 
-$(OBJS): $(SRCS)
+%.o: %.c
 	$(CC) -c $^ $(CFLAGS)
 
 .PHONY: clean 
