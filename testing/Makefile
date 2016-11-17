@@ -1,24 +1,27 @@
 CC=gcc
 CFLAGS=-Wall -Wextra -DNDEBUG -std=c11
 SRCS=$(wildcard *.c)
-OBJS=$(SRCS:.cpp=.o)
-EXEC=testing
+OBJS=$(SRCS:.c=.o)
+TARGET=testing
 
-BINDIR=../bin
-MKDIR=mkdir -p
+OUTDIR=../bin
+
+MKDIR_P=mkdir -p
 RM=rm -f
 
-all: $(EXEC)
+all: $(TARGET)
 
-$(EXEC): $(OBJS)
-	@$(MKDIR) $(BINDIR)
-	$(CC) -o $(BINDIR)/$(EXEC) $(OBJS)
+$(TARGET): $(OBJS) $(OUTDIR)
+	$(CC) -o $(OUTDIR)/$(TARGET) $(OBJS)
 
 %.o: %.c
 	$(CC) -c $^ $(CFLAGS)
 
-.PHONY: clean 
+$(OUTDIR):
+	@$(MKDIR_P) $@
 
 clean:
 	$(RM) *.o
-	$(RM) $(BINDIR)/$(EXEC)
+	$(RM) $(OUTDIR)/$(TARGET)
+
+.PHONY: clean all

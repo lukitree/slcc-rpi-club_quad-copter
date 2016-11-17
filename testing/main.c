@@ -3,7 +3,6 @@
 #include <fcntl.h>
 #include <sys/stat.h>
 #include <linux/i2c-dev.h>
-#include <SPI.h>
 
 #define ACC_ADDRESS 0x1E
 
@@ -40,12 +39,12 @@ void selectDevice(int file, int addr)
 
 void enableAccelerometer()
 {
-	writeAccReg(CTRL_REG1_XM, 0b01100111);
-	writeAccReg(CTRL_REG2_XM, 0b00100000);
+	//writeAccReg(CTRL_REG1_XM, 0b01100111);
+	//writeAccReg(CTRL_REG2_XM, 0b00100000);
 }
 
 void enableGyro()
 {
-	writeGyrReg(CTRL_REG1_G, 0b00001111);
-	writeGyrReg(CTRL_REG2_G, 0b00110000);
+	//writeGyrReg(CTRL_REG1_G, 0b00001111);
+	//writeGyrReg(CTRL_REG2_G, 0b00110000);
 }
